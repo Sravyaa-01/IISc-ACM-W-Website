@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ACM-W IISc Events</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">  
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
         <style>
             .header {
                 position: fixed;
@@ -43,6 +44,78 @@
         <br>
         <br>
         <br>
+        <div class="holder">
+        <h1>UPCOMING EVENTS</h1>
+
+        <div class="card" style="--clr: #009688">
+            <div class="img-box">
+                <img src="iisc.png" alt="Event Image">
+            </div>
+            <div class="content">
+                <h2>Upcoming event</h2>
+                <p>This provides the whole information about the event which is going to be organized by acm-w.</p>
+                <a href="#">Event Date: June 26, 2003</a>
+                <div class="like-button">
+                    <img class="heart" src="heart.jpg" alt="Like Button" data-event-id="1">
+                    <span class="like-count" id="likeCount1">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="--clr: #FF3E7F">
+            <div class="img-box">
+                <img src="iisc.png" alt="Event Image">
+            </div>
+            <div class="content">
+                <h2>Upcoming event</h2>
+                <p>This provides the whole information about the event which is going to be organized by acm-w.</p>
+                <a href="#">Event Date: June 26, 2003</a>
+                <div class="like-button">
+                    <img class="heart" src="heart.jpg" alt="Like Button" data-event-id="2">
+                    <span class="like-count" id="likeCount2">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="--clr: #03A9F4">
+            <div class="img-box">
+                <img src="iisc.png" alt="Event Image">
+            </div>
+            <div class="content">
+                <h2>Upcoming event</h2>
+                <p>This provides the whole information about the event which is going to be organized by acm-w.</p>
+                <a href="#">Event Date: June 26, 2003</a>
+                <div class="like-button">
+                    <img class="heart" src="heart.jpg" alt="Like Button" data-event-id="3">
+                    <span class="like-count" id="likeCount3">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLike(heartIcon) {
+            var eventId = heartIcon.dataset.eventId;
+            var likeCountElement = document.getElementById("likeCount" + eventId);
+            var currentCount = parseInt(likeCountElement.textContent, 10);
+
+            if (heartIcon.classList.contains("clicked")) {
+                heartIcon.classList.remove("clicked");
+                heartIcon.src = "heart.jpg";
+                likeCountElement.textContent = currentCount - 1;
+            } else {
+                heartIcon.classList.add("clicked");
+                heartIcon.src = "redheart.jpg";
+                likeCountElement.textContent = currentCount + 1;
+            }
+        }
+
+        document.querySelectorAll(".heart").forEach(function (heart) {
+            heart.addEventListener("click", function () {
+                toggleLike(this);
+            });
+        });
+    </script>
         <footer class="footer">
             <div class = "Top">
                 <a href="#">Back to top</a>
